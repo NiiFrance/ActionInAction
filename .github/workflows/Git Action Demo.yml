@@ -41,6 +41,12 @@ jobs:
     runs-on: windows-latest
     steps:
       - run: echo "Building API"
+
+  build-db:
+    needs: build-app
+    runs-on: windows-latest
+    steps:
+      - run: echo "Hello Windows"
     
   packaging:
     needs: [build-app, build-api]
